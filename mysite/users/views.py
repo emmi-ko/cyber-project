@@ -53,10 +53,10 @@ def sign_up(request):
             if User.objects.filter(username=username).exists():
                 form.add_error("username",'Username already taken')
                 return render(request, 'users/register.html', {'form': form})
-            
+           
             new_user = User.objects.create_user(username=username, password=password) 
             messages.success(request, 'You have signed up successfully.')
-            login(request, new_user)
+            
             return redirect('message')
         else:
             return render(request, 'users/register.html', {'form': form})
