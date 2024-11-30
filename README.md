@@ -22,8 +22,19 @@ In the app you can:
 - register as user
 - login as user
 - logout as user
-- send message to another user
+- send messages to other users
 - delete messages you have received
+
+Already registered users are (username, password):
+- bob, squarepants
+- alice, redqueen
+- patrick, asteroid
+
+
+Admin login credentials (username):
+- admin, you can easily get the password through the security vulnerabilities
+
+There are 3 messages in the database.
 
 
 The code has the following security vulnerabilities referencing the OWASP Top Ten Application Security Risks 2017 \
