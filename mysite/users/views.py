@@ -5,7 +5,7 @@ from .forms import LoginForm, RegisterForm
 from django.contrib.auth.models import User
 import logging
 
-logger = logging.getLogger("users.views")
+# logger = logging.getLogger("users.views")
 
 def sign_in(request):
     if request.method == 'GET':
@@ -27,7 +27,7 @@ def sign_in(request):
                 login(request, user)
                 messages.success(request,f'Hi {username.title()}, welcome back!')
                 return redirect('message')
-            logger.warning(f"Failed {username.title()} login attempt" )
+            # logger.warning(f"Failed {username.title()} login attempt" )
        
         messages.error(request,f'Invalid username or password')
         return render(request,'users/login.html',{'form': form})
@@ -47,14 +47,13 @@ def sign_up(request):
         form = RegisterForm(request.POST) 
 
         if form.is_valid():
-            print(form.data)
             username = form.cleaned_data.get("username")
             password = form.cleaned_data.get("password")
             if User.objects.filter(username=username).exists():
                 form.add_error("username",'Username already taken')
                 return render(request, 'users/register.html', {'form': form})
            
-            new_user = User.objects.create_user(username=username, password=password) 
+            User.objects.create_user(username=username, password=password) 
             messages.success(request, 'You have signed up successfully.')
             
             return redirect('message')
