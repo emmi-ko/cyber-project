@@ -46,10 +46,7 @@ def create_message(request):
                 messages.error(request, f'The user {receiver_name} does not exist.')
                 return render(request,'message/message_form.html',{'form':form})
 
-        
 
-
-        
 @login_required   
 @csrf_exempt     
 def delete_message(request, id):
