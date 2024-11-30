@@ -1,21 +1,22 @@
-# cyber-project
+# cyber-project, security vulnerabilities
 
-Installation: Clone or download zip from github page, install django if not already installed.
+### Installation
+Clone or download zip from the github page, install django if not already installed.
 
-The code should be ready to use with the database and migrations. 
-You can run the code in terminal by running
-python3 manage.py runserver
+The code should be ready to use, you can run the code in terminal by running \
+`python3 manage.py runserver`
 
-
-The code is based on the Django Basics tutorial found here:
-https://www.pythontutorial.net/django-tutorial/getting-started-with-django/
-The source code for the tutorial can be downloaded using this link:
+### About the code
+The code is based on the Django Basics tutorial found here (multiple parts): \
+https://www.pythontutorial.net/django-tutorial/getting-started-with-django/  \
+The source code for the tutorial can be downloaded using this link:\
 https://www.pythontutorial.net/wp-content/uploads/2023/01/django_project_11.zip
 
-Not all parts of the code have been applied in this app, but it is mostly a one to one copy in construct. The main difference being that posts viewable to all users are changed to messages only viewable to a specified user. 
+Not all parts of the code have been applied in this app, but it is mostly a one to one copy in construct and naming. \
+The main difference being that posts viewable to all users are changed to messages only viewable to a specified user. 
 
-The idea has been to “break” the code as much as possible to create security issues. Since django has a lot of built in safety features, some parts of the code have been “rewritten” to create these vulnerabilities. So this project turned more into fighting against djangos security measures, rather than showcasing already existing security vulnerabilities. I’m sure it would have been easier to write the code from scratch without using django rather than trying to work around it. There are also a lot of deliberate bad coding practices in the code to make the vulnerabilities easier to showcase.
-In the essay I present simple ways to fix the code, but once again note that many of the issues would not exist if they were not intentionally made. Many of the vulnerabilities and their fixes are based on the course exercises.
+The idea has been to “break” the code as much as possible to create security issues. Since django has a lot of built-in safety features, parts of the code have been “rewritten” to create these vulnerabilities. So this project turned more into fighting against djangos security measures, rather than showcasing already existing security vulnerabilities. I’m sure it would have been easier to write the code from scratch without using django rather than trying to work around it. There are also a lot of deliberate bad coding practices in the code to make the vulnerabilities easier to showcase.
+In the essay submitted I present simple ways to fix the code, but once again note that many of the issues would not exist if they were not intentionally made. Many of the vulnerabilities and their fixes are based on the course exercises.
 
 In the app you can:
 - register as user
@@ -25,7 +26,8 @@ In the app you can:
 - delete messages you have received
 
 
-The code for the app has the following security vulnerabilities referencing the OWASP Top Ten Application Security Risks 2017 https://owasp.org/www-project-top-ten/2017/Top_10: 
+The code has the following security vulnerabilities referencing the OWASP Top Ten Application Security Risks 2017 \
+https://owasp.org/www-project-top-ten/2017/Top_10: 
 - Injection
 - Broken authentication
 - Sensitive data exposure
