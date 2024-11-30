@@ -50,7 +50,7 @@ def create_message(request):
 @login_required   
 @csrf_exempt     
 def delete_message(request, id):
-    message = get_object_or_404(Message, pk=id)   # replace Message with Message.objects.filter(author=request.user) to stop users from deleting messages not sent to them
+    message = get_object_or_404(Message, pk=id)
     context = {'message': message}    
     
     if request.method == 'GET':
