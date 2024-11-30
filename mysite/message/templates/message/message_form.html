@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+	{% if messages %}
+		<div class="messages">
+		{% for message in messages %}
+			<div class="alert {% if message.tags %}alert-{{ message.tags }}"{% endif %}>
+				{{ message }}
+			</div>
+		{% endfor %}
+		</div>
+	{% endif %}
+	    
+    {% block content %}
+<h2>New message</h2>
+<form method="POST" novalidate>
+	{% csrf_token %}
+		<span>To:</span><br/>
+		<input type="text" name="receiver"/><br/>
+		<span>Title:</span><br/>
+		<input type="text" name="title"/><br/>
+		<span>Message:</span><br/>
+		<textarea name="content">{{ form.content.value }}</textarea><br/>
+
+	<input type="submit" value="Send" />
+</form>
+
+{% endblock content %}

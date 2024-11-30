@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+	
+{% block content %}
+<h1>Received messages</h1>
+	{% for message in msg %}
+		<h2>{{ message.title }}</h2>
+		<small>Published on {{ message.published_at | date:"M d, Y" }} by {{ message.sender | title}}</small>
+		<p>{{ message.content | safe }}</p>
+		<script>
+			var content = "{{ message.content | safe }}";
+			console.log(content);
+		</script>
+		
+		{% if request.user.is_authenticated and request.user == message.receiver %}
+		<p>
+			<a href="{% url 'message-delete' message.id%}">Delete</a>
+		</p>
+		{% endif %}
+		
+	{% endfor %}
+	
+{% endblock content %}

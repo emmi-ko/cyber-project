@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Delete Message</h2>
+
+<form method="POST">
+
+  <p>Are you sure that you want to delete the message "{{message.title}}"?</p>
+  <p>{{message.content}}</p>
+  <p>{{message.receiver}}</p>
+  <div>
+    <button type="submit">Yes, Delete</button>
+    <a href="{% url 'message' %}">Cancel</a>
+  </div>
+</form>
+
+{% endblock content %}
